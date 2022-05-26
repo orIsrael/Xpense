@@ -4,7 +4,6 @@ from tips import views
 
 app_name = 'tips'
 urlpatterns = [
-    path('show_profile/<int:user_id>/', views.show_profile_view, name='show_profile'),
     path('', views.index, name='index'),
     path('add_tip/', views.add_tip, name='add_tip'),
     path('edit_tip/<int:tip_id>/', views.edit_tip, name='edit_tip'),

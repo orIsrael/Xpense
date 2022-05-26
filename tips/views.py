@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Tip
 from .forms import TipForm
-
 from .constants import (
     TIPS_PAGE_ROUTE,
     ADD_TIP_PAGE_ROUTE,
@@ -13,7 +12,6 @@ from .constants import (
     READ_MORE_PAGE_ROUTE,
     CATEGORIES_PAGE_ROUTE,
     DATE_PAGE_ROUTE,
-    SHOW_PROFILE_ROOT,
 )
 
 
@@ -52,10 +50,6 @@ def filter_tip_by_date(request, date):
 def read_more_view(request, tip_id):
     tip = get_object_or_404(Tip, pk=tip_id)
     return render(request, READ_MORE_PAGE_ROUTE, {'tip': tip})
-
-
-def show_profile_view(request, user_id):
-    return redirect(SHOW_PROFILE_ROOT)
 
 
 @login_required
