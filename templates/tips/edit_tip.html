@@ -5,7 +5,11 @@
 {% if user.is_authenticated %}
 {% if user.get_session_auth_hash == tip.user_token %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/accounts/edit_tip.css' %}" />
+<<<<<<< HEAD
 <div id="add_tip">
+=======
+<div id="edit_tip">
+>>>>>>> 20a6a45 (Tips Authentication: Creating a user profile and connecting the tip model to it)
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">

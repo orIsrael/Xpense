@@ -2,12 +2,23 @@ from django.db import models
 from django.utils import timezone
 from expenses.models import Expenses
 from django.contrib.auth.models import User
-from accounts.models import UserProfile
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    username = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    bio = models.TextField(max_length=500)
+    email = models.EmailField()
+    profile_pic = models.ImageField(null=True, blank=True, upload_to="images/")
+
+    def __str__(self) -> str:
+        return str(self.user)
 
 
 class Tip(models.Model):
     user_token = User.get_session_auth_hash
-    user_profile = UserProfile
     author = models.CharField(max_length=32)
     text = models.TextField(max_length=200)
     date = models.DateTimeField(default=timezone.now)

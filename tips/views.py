@@ -5,6 +5,10 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Tip
 from .forms import TipForm
+<<<<<<< HEAD
+=======
+
+>>>>>>> 20a6a45 (Tips Authentication: Creating a user profile and connecting the tip model to it)
 from .constants import (
     TIPS_PAGE_ROUTE,
     ADD_TIP_PAGE_ROUTE,
@@ -12,6 +16,10 @@ from .constants import (
     READ_MORE_PAGE_ROUTE,
     CATEGORIES_PAGE_ROUTE,
     DATE_PAGE_ROUTE,
+<<<<<<< HEAD
+=======
+    # SHOW_PROFILE_ROOT,
+>>>>>>> 20a6a45 (Tips Authentication: Creating a user profile and connecting the tip model to it)
 )
 
 
@@ -52,6 +60,13 @@ def read_more_view(request, tip_id):
     return render(request, READ_MORE_PAGE_ROUTE, {'tip': tip})
 
 
+<<<<<<< HEAD
+=======
+# def show_profile_view(request, user_id):
+#     return redirect(SHOW_PROFILE_ROOT)
+
+
+>>>>>>> 20a6a45 (Tips Authentication: Creating a user profile and connecting the tip model to it)
 @login_required
 def edit_tip(request, tip_id):
     tip = get_object_or_404(Tip, pk=tip_id)
